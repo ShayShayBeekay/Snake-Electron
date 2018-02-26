@@ -173,11 +173,15 @@ Game.Render = function(context, snake) {
     // Render Food
     this.drawCell(snake.stage.food.x, snake.stage.food.y);
 
-    // Render Score
-    context.font = "20px Arial";
-    context.fillText('Score: ' + snake.stage.score, 5, (snake.stage.height - 5));
+    this.updateScore();
   };
 
+  this.updateScore = function(){
+    // Render Score
+    context.font = '20px Arial';
+    context.fillStyle = 'rgb(151, 149, 149)';
+    context.fillText('Score: ' + snake.stage.score, 5, (snake.stage.height - 5));
+  }
   // Draw Cell
   this.drawCell = function(x, y) {
     // var grd = context.createRadialGradient(75,50,5,90,60,100);
