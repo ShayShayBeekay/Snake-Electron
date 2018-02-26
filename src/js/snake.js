@@ -19,8 +19,7 @@ Keyboard.Keymap = {
  * Keyboard Events
  */
 Keyboard.ControllerEvents = function() {
-
-  // Setts
+  // Sets
   var self      = this;
   this.pressKey = null;
   this.keymap   = Keyboard.Keymap;
