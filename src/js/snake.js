@@ -184,14 +184,12 @@ Game.Render = function(context, snake) {
   }
   // Draw Cell
   this.drawCell = function(x, y) {
-    // var grd = context.createRadialGradient(75,50,5,90,60,100);
-    var grd = context.createRadialGradient(75,50,5,400,60,520);
-    grd.addColorStop(0,this.updateColour());
-    grd.addColorStop(1,this.updateColour());
-    // grd.addColorStop(1,"white");
+    var gradient = context.createRadialGradient(75,50,5,400,60,520);
+    gradient.addColorStop(0,this.updateColour());
+    gradient.addColorStop(1,this.updateColour());
 
     // Fill with gradient
-    context.fillStyle = grd;
+    context.fillStyle = gradient;
 
     // context.fillStyle = this.updateColour();
     context.beginPath();
