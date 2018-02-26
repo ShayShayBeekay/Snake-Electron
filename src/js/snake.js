@@ -73,7 +73,6 @@ Component.Snake = function(canvas, config) {
 
   // Init Snake
   this.initSnake = function() {
-
     // Itaration in Snake config Size
     for (var i = 0; i < this.stage.config.size; i++) {
 
@@ -156,6 +155,13 @@ Game.Render = function(context, snake) {
     if (nx == snake.stage.food.x && ny == snake.stage.food.y) {
       var tail = {x: nx, y: ny};
       snake.stage.score++;
+
+      // Logic to increase speed at each 5 increment, rendering a bit buggy
+      if(snake.stage.score!=0 && snake.stage.score%5==0){
+        snake.stage.score-=0;
+        this.stage.config.fps -= 10;
+      }
+
       snake.initFood();
     } else {
       var tail = snake.stage.length.pop();
