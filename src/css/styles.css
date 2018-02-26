@@ -1,13 +1,18 @@
-body {
+html, body, .container-fluid {
   text-align:center;
   font-family: Arial;
   color: white;
-  background-color: rgb(151, 149, 149);
+  height: 90%;
+  background-color: #111;
 }
+html {
+  -webkit-app-region: drag;
+}
+
 h3 {
   text-align:center !important;
   font-family: helvetica !important;
 }
 canvas {
-  border: 3px solid rgb(151, 149, 149);
+  /*border: 3px solid rgb(151, 149, 149);*/
 }

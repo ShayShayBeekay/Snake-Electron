@@ -123,7 +123,7 @@ Game.Render = function(context, snake) {
     }
 
     // Render White Stage
-		context.fillStyle = "white";
+		context.fillStyle = 'rgb(17, 17, 17)';
 		context.fillRect(0, 0, snake.stage.width, snake.stage.height);
 
     // Snake Position
@@ -179,7 +179,7 @@ Game.Render = function(context, snake) {
   this.updateScore = function(){
     // Render Score
     context.font = '20px Arial';
-    context.fillStyle = 'rgb(151, 149, 149)';
+    context.fillStyle = 'white';
     context.fillText('Score: ' + snake.stage.score, 5, (snake.stage.height - 5));
   }
   // Draw Cell

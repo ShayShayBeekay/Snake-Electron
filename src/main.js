@@ -8,7 +8,13 @@ const url = require('url')
 
   function createWindow () {
     // Create the browser window.
-    win = new BrowserWindow({width: 550, height: 500})
+    win = new BrowserWindow({
+      width: 550,
+      height: 500,
+      titleBarStyle: 'hidden-inset',
+      // set the background color to black
+      backgroundColor: "#111",
+    })
 
     // and load the index.html of the app.
     win.loadURL(url.format({
@@ -16,6 +22,9 @@ const url = require('url')
       protocol: 'file:',
       slashes: true
     }))
+
+    // Open the DevTools.
+    // win.webContents.openDevTools()
 
     // Emitted when the window is closed.
     win.on('closed', () => {
