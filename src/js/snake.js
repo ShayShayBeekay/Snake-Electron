@@ -174,12 +174,22 @@ Game.Render = function(context, snake) {
     this.drawCell(snake.stage.food.x, snake.stage.food.y);
 
     // Render Score
+    context.font = "20px Arial";
     context.fillText('Score: ' + snake.stage.score, 5, (snake.stage.height - 5));
   };
 
   // Draw Cell
   this.drawCell = function(x, y) {
-    context.fillStyle = this.updateColour();
+    // var grd = context.createRadialGradient(75,50,5,90,60,100);
+    var grd = context.createRadialGradient(75,50,5,400,60,520);
+    grd.addColorStop(0,this.updateColour());
+    grd.addColorStop(1,this.updateColour());
+    // grd.addColorStop(1,"white");
+
+    // Fill with gradient
+    context.fillStyle = grd;
+
+    // context.fillStyle = this.updateColour();
     context.beginPath();
     context.arc((x * snake.stage.config.cw + 6), (y * snake.stage.config.cw + 6), 4, 0, 2*Math.PI, false);
     context.fill();
